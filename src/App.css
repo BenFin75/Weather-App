@@ -1,38 +1,151 @@
 .App {
-  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  background-color: #242928;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.map-container {
+  flex:1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#pac-input {
+  margin-top: 10px;
+  background-color: #242928;
+  color: orange;
+  border: solid 3px #ff5e00;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1.5em;
+  width: 90%;
+  height: 3%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#pac-input:focus-visible {
+  outline: none;
+}
+
+.pac-container {
+  background-color: #242928;
+  border: solid 2px #ff5e00;
+}
+
+.pac-container span {
+  color: azure;
+}
+.pac-container span .pac-matched {
+  color: #ff5e00;
+}
+
+.pac-item:hover {
+  background-color: #757474 !important;
+}
+
+.search {
+  position: absolute;
+  top: 0;
+  z-index: 10;
+}
+
+.weather {
+  width: 40%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-weight: 700;
+  margin-bottom: 3%;
+  border-left: solid 0.5vw #464646;
+}
+
+.weather > p {
+  color: orange;
+  font-size: 30px;
+}
+
+.current {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  color: azure;
+  margin-bottom: 40px;
 }
 
-.App-link {
-  color: #61dafb;
+.current > .day {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5%;
+}
+.current .date {
+  font-size: 2em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.current .time {
+  font-size: 1.5em;
+}
+
+.todays-weather {
+  display: flex;
+  align-items: center;
+  gap: 20%;
+}
+
+.todays-weather img {
+  height: 100px;
+  margin-bottom: -15px;
+}
+
+.todays-weather > * {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.todays-weather .real {
+  font-size: 2em;
+  font-weight: 700;
+}
+
+.five-day {
+  display: flex;
+  color: azure;
+}
+
+.days-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.days-container > .day {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.days-container > .day > .symbology {
+  margin-bottom: -5px;
+}
+
+.days-container > .day > .percip-chance {
+  margin-bottom: 10px;
+}
+
+.days-container .temps {
+  display: flex;
+  gap: 8px;
+}
+
+.days-container .min-temp {
+  color: aqua;
+}
+
+.days-container .max-temp {
+  color: #ff5e00;
 }
