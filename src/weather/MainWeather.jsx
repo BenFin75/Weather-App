@@ -33,10 +33,18 @@ const MainWeather = ({ locationInfo }) => {
     }
   }, [locationInfo, units])
 
+  const toggleMenu = () => {
+    const infoPanel = document.querySelector('.weather');
+    infoPanel.classList.toggle('open');
+    const searchBar = document.querySelector('#pac-input');
+    searchBar.classList.toggle('open');
+  }
+
   // console.log(weather.data.current);
 //weather={weather.data.current}
   return ( 
     <div className="weather">
+      <button className="close" type='button' onClick={toggleMenu}>ᐊ</button>
       <p className="address">
         {weather && locationInfo.address}
       </p>
