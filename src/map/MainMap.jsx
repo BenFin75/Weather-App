@@ -4,6 +4,7 @@ import Map from "./Map.jsx";
 
 
 const MainMap = ({ getAddress, getLatLng }) => {
+  
   const render = (status = Status) => {
     return <h1>{status}</h1>;
   };
@@ -11,6 +12,10 @@ const MainMap = ({ getAddress, getLatLng }) => {
   const [geolocation, setGeolocation] = useState()
 
   const getGeolocation = (location) => {
+    if (window.innerWidth < 800) {
+      const infoPanel = document.querySelector('.weather');
+      infoPanel.classList.toggle('open');
+    }
     setGeolocation(location);
   };
 
@@ -82,8 +87,6 @@ const MainMap = ({ getAddress, getLatLng }) => {
       getAddress(final_address)
     }
   }, [geolocation, getAddress])
-
-
 
   return ( 
     <Wrapper apiKey={"AIzaSyC_taUg9_OMXZ70-_UkmwXfB5Ufx856n0k"} render={render} libraries={["places"]} >
