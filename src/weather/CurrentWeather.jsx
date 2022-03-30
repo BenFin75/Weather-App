@@ -1,6 +1,7 @@
 import symbols from "./symbols";
 const CurrentWeather = ({ weather, units }) => {
   const todaysDate = new Date();
+  let options;
 
   let weatherSymbol;
   let WeatherDescription;
@@ -11,6 +12,7 @@ const CurrentWeather = ({ weather, units }) => {
 
   if (weather !== '') {
     const todaysWeather = weather.data.current
+    options = { timeZone:weather.data.timezone, weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
     weatherSymbol = todaysWeather.weather[0].main
     if (weatherSymbol === 'Clouds') {
       if (todaysWeather.clouds < 50) {
@@ -23,15 +25,15 @@ const CurrentWeather = ({ weather, units }) => {
     feel = Math.round(parseFloat(todaysWeather.feels_like));
     wind = Math.round(parseFloat(todaysWeather.wind_speed));
   }
-  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
+  
   return (
     <div className="current">
       <div className="day">
         <div className="date">
-          {todaysDate.toLocaleDateString(undefined, options)}
+          {weather && todaysDate.toLocaleDateString(undefined, options)}
         </div>
         <div className="time">
-          {todaysDate.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}
+          {weather && todaysDate.toLocaleTimeString([], {timeZone:weather.data.timezone, hour: '2-digit', minute:'2-digit'})}
         </div>
       </div>
       <div className="todays-weather">
