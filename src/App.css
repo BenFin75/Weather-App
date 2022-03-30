@@ -269,8 +269,8 @@
 @media screen and (max-width: 800px){
 
   #pac-input {
-    height: 8vh;
-    font-size: 5vh;
+    height: 5vh;
+    font-size: 4vh;
   }
 
   .weather {
