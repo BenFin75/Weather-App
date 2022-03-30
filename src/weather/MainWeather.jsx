@@ -47,6 +47,7 @@ const MainWeather = ({ locationInfo }) => {
       <button className="close" type='button' onClick={toggleMenu}>ᐊ</button>
       <p className="address">
         {weather && locationInfo.address}
+        {!weather && "Click on the map, or search to get weather"}
       </p>
       <CurrentWeather weather={weather} units={units} />
       <FiveDayWeather weather={weather} units={units} />
