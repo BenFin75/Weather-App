@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import getForcast from '../firebase';
 import CurrentWeather from './CurrentWeather';
 import FiveDayWeather from './FiveDayWeather';
+import TodaysForcast from './TodaysForcast';
 
 // const buildForcasat = async () => {
 //   console.log(result.data)
@@ -39,9 +40,9 @@ const MainWeather = ({ locationInfo }) => {
       <p className="address">
         {weather && locationInfo.address}
       </p>
-      <CurrentWeather weather={weather} units={units} ></CurrentWeather>
-      <FiveDayWeather weather={weather} units={units} ></FiveDayWeather>
-      <div className="hourlyforcast"></div>
+      <CurrentWeather weather={weather} units={units} />
+      <FiveDayWeather weather={weather} units={units} />
+      <TodaysForcast weather={weather} units={units}  />
     </div>
   );
 }
