@@ -7,6 +7,7 @@
 
 .map-container {
   flex:1;
+  max-height: 100vh;
 }
 
 #pac-input {
@@ -254,6 +255,7 @@
 }
 
 @media (max-width: 1150px) and (min-width: 800px){
+
   .todays-weather {
     flex-direction: column;
     gap: 30px;
@@ -266,6 +268,12 @@
 }
 
 @media screen and (max-width: 800px){
+
+  #pac-input {
+    height: 8vh;
+    font-size: 5vh;
+  }
+
   .weather {
     position: relative;
     width: 0;
