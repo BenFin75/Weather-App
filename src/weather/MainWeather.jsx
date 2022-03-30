@@ -51,6 +51,7 @@ const MainWeather = ({ locationInfo }) => {
       <CurrentWeather weather={weather} units={units} />
       <FiveDayWeather weather={weather} units={units} />
       <TodaysForcast weather={weather} units={units}  />
+      <div className="footer">Created by<a href="https://github.com/BenFin75"> Benjamin Finley </a></div>
     </div>
   );
 }
